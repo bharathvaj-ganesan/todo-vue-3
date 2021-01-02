@@ -1,20 +1,20 @@
 <template>
   <div class="todo__list">
     <h2 class="todo__list__title">ToDo List</h2>
-    <ul>
-      <div class="todo__list--empty" v-if="!displayTodos.length">
-        Add items to get started.
-      </div>
-      <template v-else>
+    <div class="todo__list--empty" v-if="!displayTodos.length">
+      Add items to get started.
+    </div>
+    <template v-else>
+      <transition-group name="todo" tag="ul">
         <TodoItem
           v-for="(todo, index) of displayTodos"
           :todo="todo"
-          :key="index"
+          :key="todo.message"
           @toggle="$emit('toggle', todo, index)"
           @remove="$emit('remove', todo, index)"
         />
-      </template>
-    </ul>
+      </transition-group>
+    </template>
   </div>
 </template>
 

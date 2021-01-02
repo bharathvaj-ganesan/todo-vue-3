@@ -14,8 +14,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TodoItem",
-  props: ['todo', 'toggle'],
-  emits: ['remove']
+  props: ['todo'],
+  emits: ['remove', 'toggle']
 });
 </script>
 
