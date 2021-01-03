@@ -28,7 +28,6 @@ $btn_bg_color: #a0a4d9;
 
 html,
 body {
-  height: 100%;
   box-sizing: border-box;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -55,6 +54,18 @@ body {
       font-size: 16px;
       font-style: italic;
 
+    }
+
+    &footer {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      color: var(--text-primary) !important;
+
+      a {
+        font-weight: 700;
+        color: var(--text-primary) !important;
+      }
     }
 
     &add {

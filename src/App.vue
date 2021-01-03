@@ -1,9 +1,15 @@
 <template>
   <div class="todo__container">
     <h2 class="todo__title">ToDo App</h2>
-    <p class="todo__caption">Powered by Vue 3</p>
+    <p class="todo__caption">Powered by Vue 3 + Typescript + Vite + SCSS</p>
     <AddTodo @add="addTodo" />
     <TodoList :todos="todos" @remove="removeTodo" @toggle="toggleTodo" />
+    <p class="todo__footer">
+      Made with ❤️ by
+      <a href="https://twitter.com/bharathvaj_g" target="_blank"
+        >bharathvaj_g</a
+      >
+    </p>
   </div>
 </template>
 

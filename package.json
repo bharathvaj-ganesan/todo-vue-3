@@ -1,6 +1,7 @@
 {
   "name": "todo-vue-3",
   "version": "0.0.0",
+  "author": "Bharathvaj Ganesan <bharathvaj1995@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build",
