@@ -1,8 +1,13 @@
 <template>
   <form @submit.prevent="addTodo">
-    <label for="new-todo">New Todo</label>
-    <input id="new-todo" type="text" v-model="newTodo" />
-    <button>Add Todo</button>
+    <label class="todo__add-item__label" for="new-todo">New Todo</label>
+    <input
+      class="todo__add-item__input"
+      id="new-todo"
+      type="text"
+      v-model="newTodo"
+    />
+    <button class="todo__add-item__action">Add Todo</button>
   </form>
 </template>
 
