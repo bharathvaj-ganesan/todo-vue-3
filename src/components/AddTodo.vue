@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="addTodo">
+  <form class="todo__add-item" @submit.prevent="addTodo">
     <label class="todo__add-item__label" for="new-todo">New Todo</label>
     <input
       class="todo__add-item__input"
@@ -7,7 +7,7 @@
       type="text"
       v-model="newTodo"
     />
-    <button class="todo__add-item__action">Add Todo</button>
+    <button class="todo__add-item__action" :disabled="!newTodo">Add</button>
   </form>
 </template>
 

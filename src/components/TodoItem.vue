@@ -1,7 +1,7 @@
 <template>
   <li class="todo__list-item">
     <span class="todo__list-item__title"> {{ todo }}</span>
-    <button class="todo__list-item__remove" @click="$emit('remove')">
+    <button class="todo__list-item__action" @click="$emit('remove')">
       Remove
     </button>
   </li>

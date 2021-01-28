@@ -1,3 +1,6 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "css.validate": false, // Disable css built-in lint
+  "scss.validate": false,
+  "stylelint.enable": true, // Enable sytlelint
 }
