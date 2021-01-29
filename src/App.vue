@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import AddTodo from './components/AddTodo.vue'
-import TodoList from './components/TodoList.vue';
+import AddTodo from '@/components/AddTodo.vue'
+import TodoList from '@/components/TodoList.vue';
 
 export default defineComponent({
   name: 'App',

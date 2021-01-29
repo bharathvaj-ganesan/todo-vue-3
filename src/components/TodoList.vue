@@ -3,7 +3,7 @@
     <h2 class="todo__list__title">ToDo List</h2>
     <ul>
       <div class="todo__list--empty" v-if="!todos.length">
-        Add item to get started.
+        Add items to get started.
       </div>
       <template v-else>
         <TodoItem
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import TodoItem from './TodoItem.vue';
+import TodoItem from '@/components/TodoItem.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({

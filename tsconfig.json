@@ -19,7 +19,12 @@
       {
         "name": "@vuedx/typescript-plugin-vue"
       }
-    ]
+    ],
+    "paths": {
+      "@": [
+        "src"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
