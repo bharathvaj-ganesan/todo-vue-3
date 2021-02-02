@@ -163,7 +163,9 @@ body {
         transition: all 0.8s ease;
 
         &--done {
-          text-decoration: line-through;
+          span {
+            text-decoration: line-through;
+          }
         }
 
         &__ {
@@ -191,21 +193,16 @@ body {
   }
 }
 
-// .list-enter-active,
-// .list-leave-active {
-//   transition: all 0.5s ease;
-// }
+.todo-list-leave-active {
+  transition: all 0.5s ease;
+}
 
-// .list-enter-from,
-// .list-enter-to {
-//   opacity: 0;
-//   transform: translateX(100px);
-// }
+.todo-list-enter-from,
+.todo-list-enter-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
 
-// .flip-list-move {
-//   transition: transform 0.8s ease;
-// }
-
-.todo-move {
-  transition: transform 1s ease;
+.todo-list-move {
+  transition: all 1s ease;
 }
