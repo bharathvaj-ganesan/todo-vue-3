@@ -1,16 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld :msg="'hello world'" />
+  <div>
+    <h2>TODO APP</h2>
+    <AddTodo @add="addTodo" />
+    <TodoList :todos="todos" @remove="removeTodo" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, ref } from 'vue';
+import AddTodo from './components/AddTodo.vue';
+import TodoList from './components/TodoList.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    AddTodo,
+    TodoList
+  },
+  setup() {
+    const todos = ref([]);
+
+    function addTodo(todo) {
+      todos.value.unshift(todo);
+    }
+
+    function removeTodo(idx) {
+      todos.value = [...todos.value.slice(0, idx), ...todos.value.slice(idx + 1)]
+    }
+
+    return {
+      todos,
+      addTodo,
+      removeTodo
+    }
   }
 })
 </script>
