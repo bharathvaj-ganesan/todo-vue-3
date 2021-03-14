@@ -17,7 +17,7 @@
 import { defineComponent, ref } from 'vue';
 import AddTodo from '@/components/AddTodo.vue'
 import TodoList from '@/components/TodoList.vue';
-import storageService from '@/helpers/storage';
+import useTodo from '@/composables/useTodo';
 
 export default defineComponent({
   name: 'App',
@@ -26,30 +26,7 @@ export default defineComponent({
     TodoList
   },
   setup() {
-    const storedTodos = storageService.getTodos();
-    const todos = ref(storedTodos);
-
-    function addTodo(todo) {
-      todos.value.unshift(todo);
-      updateStorage();
-    }
-
-    function toggleTodo(todo, idx) {
-      todos.value[idx].done = !todos.value[idx].done;
-      updateStorage();
-    }
-
-
-    function removeTodo(todo, idx) {
-      todos.value = [...todos.value.slice(0, idx), ...todos.value.slice(idx + 1)];
-      updateStorage();
-    }
-
-    function updateStorage() {
-      storageService.updateTodos(todos.value);
-    }
-
-
+    const { todos, addTodo, removeTodo, toggleTodo } = useTodo();
     return {
       todos,
       addTodo,

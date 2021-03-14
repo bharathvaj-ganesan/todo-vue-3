@@ -20,6 +20,7 @@
         "name": "@vuedx/typescript-plugin-vue"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@": [
         "src"

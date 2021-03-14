@@ -1,7 +1,7 @@
 <template>
   <div class="todo__list">
     <h2 class="todo__list__title">ToDo List</h2>
-    <div class="todo__list--empty" v-if="!displayTodos.length">
+    <div class="todo__list--empty todo__caption" v-if="!displayTodos.length">
       Add items to get started.
     </div>
     <template v-else>
