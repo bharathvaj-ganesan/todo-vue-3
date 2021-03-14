@@ -1,6 +1,8 @@
 <template>
-  <li class="todo__list-item">
-    <span class="todo__list-item__title"> {{ todo }}</span>
+  <li class="todo__list-item" :class="todo.done ? `todo__list-item--done` : ''">
+    <span class="todo__list-item__title" @click="$emit('toggle')">
+      {{ todo.message }}</span
+    >
     <button class="todo__list-item__action" @click="$emit('remove')">
       Remove
     </button>
@@ -12,7 +14,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TodoItem",
-  props: ['todo'],
+  props: ['todo', 'toggle'],
   emits: ['remove']
 });
 </script>

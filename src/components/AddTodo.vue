@@ -21,7 +21,10 @@ export default defineComponent({
     const newTodo = ref('');
 
     function addTodo() {
-      emit('add', newTodo.value);
+      emit('add', {
+        done: false,
+        message: newTodo.value
+      });
       newTodo.value = "";
     }
 

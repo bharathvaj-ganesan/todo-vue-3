@@ -150,8 +150,14 @@ body {
         outline: none;
         border-radius: 6px;
 
+        &--done {
+          text-decoration: line-through;
+        }
+
         &__ {
-          &title {}
+          &title {
+            cursor: pointer;
+          }
 
           &action {
             text-transform: uppercase;

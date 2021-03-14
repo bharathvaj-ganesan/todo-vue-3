@@ -3,7 +3,7 @@
     <h2 class="todo__title">ToDo App</h2>
     <p class="todo__caption">Powered by Vue 3</p>
     <AddTodo @add="addTodo" />
-    <TodoList :todos="todos" @remove="removeTodo" />
+    <TodoList :todos="todos" @remove="removeTodo" @toggle="toggleTodo" />
   </div>
 </template>
 
@@ -28,7 +28,13 @@ export default defineComponent({
       updateStorage();
     }
 
-    function removeTodo(idx) {
+    function toggleTodo(todo, idx) {
+      todos.value[idx].done = !todos.value[idx].done;
+      updateStorage();
+    }
+
+
+    function removeTodo(todo, idx) {
       todos.value = [...todos.value.slice(0, idx), ...todos.value.slice(idx + 1)];
       updateStorage();
     }
@@ -37,10 +43,12 @@ export default defineComponent({
       storageService.updateTodos(todos.value);
     }
 
+
     return {
       todos,
       addTodo,
-      removeTodo
+      removeTodo,
+      toggleTodo
     }
   }
 })
