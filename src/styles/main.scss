@@ -193,8 +193,14 @@ body {
   }
 }
 
+.todo-list-enter-active,
 .todo-list-leave-active {
-  transition: all 0.5s ease;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.todo-list-leave-active {
+  position: absolute;
 }
 
 .todo-list-enter-from,
